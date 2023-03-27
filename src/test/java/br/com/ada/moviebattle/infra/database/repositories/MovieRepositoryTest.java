@@ -2,8 +2,6 @@ package br.com.ada.moviebattle.infra.database.repositories;
 
 import br.com.ada.moviebattle.ClearDatabaseExtension;
 import br.com.ada.moviebattle.infra.database.entities.Movie;
-import org.flywaydb.core.Flyway;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

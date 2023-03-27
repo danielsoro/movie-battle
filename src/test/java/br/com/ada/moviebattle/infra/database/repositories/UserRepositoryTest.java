@@ -1,8 +1,10 @@
 package br.com.ada.moviebattle.infra.database.repositories;
 
+import br.com.ada.moviebattle.ClearDatabaseExtension;
 import br.com.ada.moviebattle.infra.database.entities.User;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -14,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
+@ExtendWith(ClearDatabaseExtension.class)
 class UserRepositoryTest {
 
     @Autowired
@@ -24,7 +27,7 @@ class UserRepositoryTest {
     public void shouldFindUserByUsernameAndPassword() {
         final var password = UUID.randomUUID().toString().substring(0, 30);
         userRepository.save(User.builder()
-                .username("asd123sd")
+                .username("danielsoro")
                 .password(password)
                 .build());
 

@@ -1,7 +1,9 @@
 package br.com.ada.moviebattle.infra.http.client.omdb;
 
+import br.com.ada.moviebattle.ClearDatabaseExtension;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -11,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @EnableConfigurationProperties
+@ExtendWith(ClearDatabaseExtension.class)
 class IMBDClientTest {
 
     @Value("${br.com.ada.moviebattle.omdb.key}")

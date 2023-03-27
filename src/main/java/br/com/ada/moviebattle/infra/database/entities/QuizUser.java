@@ -6,13 +6,17 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -39,9 +43,14 @@ public class QuizUser {
     @Column(name = "version")
     private int version;
 
+    @JoinColumn
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
+    @JoinColumn
     @ManyToOne(fetch = FetchType.LAZY)
     private Quiz quiz;
+
+    @OneToMany(mappedBy = "quizUser", fetch = FetchType.LAZY)
+    List<Pair> pairs;
 }

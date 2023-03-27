@@ -1,8 +1,10 @@
 package br.com.ada.moviebattle.infra.database.seed;
 
+import br.com.ada.moviebattle.ClearDatabaseExtension;
 import br.com.ada.moviebattle.infra.database.repositories.MovieRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
@@ -11,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 @TestPropertySource(properties = {"br.com.ada.moviebattle.omdb.seed=true"})
+@ExtendWith(ClearDatabaseExtension.class)
 class MovieSeedTest {
 
 

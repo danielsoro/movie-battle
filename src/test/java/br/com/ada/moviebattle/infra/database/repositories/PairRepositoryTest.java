@@ -1,5 +1,6 @@
 package br.com.ada.moviebattle.infra.database.repositories;
 
+import br.com.ada.moviebattle.ClearDatabaseExtension;
 import br.com.ada.moviebattle.infra.database.entities.Movie;
 import br.com.ada.moviebattle.infra.database.entities.Pair;
 import br.com.ada.moviebattle.infra.database.entities.Quiz;
@@ -7,6 +8,7 @@ import br.com.ada.moviebattle.infra.database.entities.QuizUser;
 import br.com.ada.moviebattle.infra.database.entities.User;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -16,6 +18,7 @@ import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
+@ExtendWith(ClearDatabaseExtension.class)
 class PairRepositoryTest {
 
     @Autowired

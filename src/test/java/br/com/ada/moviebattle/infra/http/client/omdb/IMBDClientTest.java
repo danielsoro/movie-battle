@@ -20,10 +20,21 @@ class IMBDClientTest {
     private OMDbClient OMDbClient;
 
     @Test
-    @DisplayName("Should get movie from OMDb API")
-    public void shouldGetMovieFromOMDbApi() {
-        final var batmam = OMDbClient.getMovie(apiKey, "Batman");
-        assertNotNull(batmam.getTitle());
+    @DisplayName("Should get movie from OMDb API by Title")
+    public void shouldGetMovieFromOMDbApiByTitle() {
+        final var movie = OMDbClient.getMovieByTitle(apiKey, "Batman");
+        assertNotNull(movie.getTitle());
+        assertNotNull(movie.getRating());
+        assertNotNull(movie.getId());
+    }
+
+    @Test
+    @DisplayName("Should get movie from OMDb API by Id")
+    public void shouldGetMovieFromOMDbApiById() {
+        final var movie = OMDbClient.getMovieById(apiKey, "tt2911666");
+        assertNotNull(movie.getTitle());
+        assertNotNull(movie.getRating());
+        assertNotNull(movie.getId());
     }
 
     @Test

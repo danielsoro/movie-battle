@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface OMDbClient {
 
     @GetMapping("/?type=movie&r=json")
-    OMDbResponse getMovie(@RequestParam("apikey") String apiKey, @RequestParam("t") String title);
+    OMDbResponse getMovieByTitle(@RequestParam("apikey") String apiKey, @RequestParam("t") String title);
+
+
+    @GetMapping("/?type=movie&r=json")
+    OMDbResponse getMovieById(@RequestParam("apikey") String apiKey, @RequestParam("i") String id);
 
     @GetMapping("/?type=movie&r=json")
     OMBdSearchResponse searchMovies(@RequestParam("apikey") String apiKey, @RequestParam("s") String title);

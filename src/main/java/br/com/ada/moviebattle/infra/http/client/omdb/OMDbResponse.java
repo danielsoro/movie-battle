@@ -7,9 +7,13 @@ import java.math.BigDecimal;
 
 @Data
 public class OMDbResponse {
+
+    @JsonProperty("imdbID")
+    private String id;
+
     @JsonProperty("Title")
     private String title;
 
-    @JsonProperty("imbdRating")
+    @JsonProperty("imdbRating")
     private BigDecimal rating;
 }

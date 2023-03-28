@@ -1,4 +1,4 @@
-package br.com.ada.moviebattle;
+package br.com.ada.moviebattle.business;
 
 import br.com.ada.moviebattle.infra.database.entities.Pair;
 import br.com.ada.moviebattle.infra.database.entities.QuizUser;

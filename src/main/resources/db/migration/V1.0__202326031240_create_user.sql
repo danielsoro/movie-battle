@@ -13,6 +13,7 @@ CREATE TABLE movies
     id      UUID         NOT NULL DEFAULT random_uuid() PRIMARY KEY,
     title   VARCHAR(255) NOT NULL,
     rate    DECIMAL      NOT NULL,
+    votes   DECIMAL      NOT NULL,
     version INT          NOT NULL default 0
 );
 

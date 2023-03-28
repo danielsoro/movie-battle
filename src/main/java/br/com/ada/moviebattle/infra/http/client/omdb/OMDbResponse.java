@@ -16,4 +16,7 @@ public class OMDbResponse {
 
     @JsonProperty("imdbRating")
     private BigDecimal rating;
+
+    @JsonProperty("imdbVotes")
+    private BigDecimal votes;
 }

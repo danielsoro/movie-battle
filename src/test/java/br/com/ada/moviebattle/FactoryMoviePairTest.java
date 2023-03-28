@@ -1,5 +1,6 @@
 package br.com.ada.moviebattle;
 
+import br.com.ada.moviebattle.business.FactoryMoviePair;
 import br.com.ada.moviebattle.infra.database.entities.User;
 import br.com.ada.moviebattle.infra.database.repositories.QuizUserRepository;
 import br.com.ada.moviebattle.infra.database.repositories.UserRepository;

@@ -12,15 +12,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class MovieSeed {
 
-    private String apiKey;
-    private boolean seedEnabled;
-    private OMDbClient omDbClient;
-    private MovieRepository movieRepository;
+    private final String apiKey;
+    private final boolean seedEnabled;
+    private final OMDbClient omDbClient;
+    private final MovieRepository movieRepository;
 
-    public MovieSeed(@Value("${br.com.ada.moviebattle.omdb.key}") String apiKey,
-                     @Value("${br.com.ada.moviebattle.omdb.seed:false}") Boolean seedEnabled,
-                     @Autowired OMDbClient omDbClient,
-                     @Autowired MovieRepository movieRepository) {
+    public MovieSeed(@Value("${br.com.ada.moviebattle.omdb.key}") final String apiKey,
+                     @Value("${br.com.ada.moviebattle.omdb.seed:false}") final Boolean seedEnabled,
+                     @Autowired final OMDbClient omDbClient,
+                     @Autowired final MovieRepository movieRepository) {
         this.apiKey = apiKey;
         this.seedEnabled = seedEnabled;
         this.omDbClient = omDbClient;

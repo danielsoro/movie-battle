@@ -32,6 +32,9 @@ public class Movie {
     @Column(name = "rate")
     private BigDecimal rate;
 
+    @Column(name = "votes")
+    private BigDecimal votes;
+
     @Version
     @Column(name = "version")
     private int version;
